@@ -40,4 +40,13 @@ displayNotes=()=>{
     }
 }
 displayNotes()
+deleteAllNotes=()=>{
+    // alert("all notes will be deleted")
+    localStorage.clear(); //delete krne se delete to ho gaya,dom ko bhi update krna pdega  
+    const notesContainer = document.getElementById('notesContainer');
+    notesContainer.innerHTML = `
+    
+   `;
+}
+
 

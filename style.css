@@ -102,6 +102,45 @@
     cursor: pointer;
 }
 
-
+/* styling lower part */
+.tut{
+    padding: 9%;
+    line-height: 130%;
+}
+.tut p{
+    padding: 7px;
+}
+.footer{
+    background-color: black;
+    color: white;
+    width: 100vw;
+    height: 150px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 200%;
+    /* position: absolute;
+    bottom: 0px; */
+}
+.credit{
+    text-decoration: none;
+}
+.footer a{
+    margin-top: 30px;
+    color: white;  
+}
+/* styles.css */
+#helloElement {
+    position: fixed;
+    bottom: 15px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 

@@ -50,13 +50,13 @@
 }
 
 .subBtn {
-    background-color: #007bff;
+    background-color: #2db6b7;
     color: #fff;
     cursor: pointer;
 }
 
 .subBtn:hover {
-    background-color: #0056b3;
+    background-color: #2ba9a98b;
 }
 /* styling the display section */
 /* styles.css */

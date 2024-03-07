@@ -1,16 +1,16 @@
 let subBtn=document.querySelectorAll('.subBtn')
 let ttl=document.querySelector('.title')
 let desc=document.querySelector('.desc')
+let crossSymbol=document.querySelector('crossSymbol')
+
 addNote=()=>{
     if(!ttl.value){
         alert("empty title not allowed")
     }
     else{
         localStorage.setItem(ttl.value, desc.value);
-      
         clearField()
-        displayNotes()
-
+        // displayNotes()
     }
 }
 clearField=()=>{
@@ -39,14 +39,16 @@ displayNotes=()=>{
         notesContainer.appendChild(noteElement);
     }
 }
+
 displayNotes()
 deleteAllNotes=()=>{
     // alert("all notes will be deleted")
     localStorage.clear(); //delete krne se delete to ho gaya,dom ko bhi update krna pdega  
     const notesContainer = document.getElementById('notesContainer');
     notesContainer.innerHTML = `
-    
    `;
 }
+
+
 
 

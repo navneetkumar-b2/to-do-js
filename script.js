@@ -9,9 +9,12 @@ addNote=()=>{
     }
     else{
         localStorage.setItem(ttl.value, desc.value);
-        clearField()
-        // displayNotes()
+        
+
+       
+        clearField()  //this was causing problem when 
     }
+    
 }
 clearField=()=>{
     let ttl=document.querySelector('.title')
@@ -41,6 +44,17 @@ displayNotes=()=>{
 }
 
 displayNotes()
+addItem=()=>{
+    const notesContainer = document.getElementById('notesContainer');
+    const noteElement = document.createElement('div');
+    noteElement.className="notesBox"
+    noteElement.innerHTML = `
+     <div class="crossSymbol">&#x2716;</div>
+        <p class="displayTitle" >${ttl.value}</p>
+        <p class="displayDesc">${desc.value}</p>
+    `;
+    notesContainer.prepend(noteElement);
+}
 deleteAllNotes=()=>{
     // alert("all notes will be deleted")
     localStorage.clear(); //delete krne se delete to ho gaya,dom ko bhi update krna pdega  

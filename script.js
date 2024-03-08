@@ -55,36 +55,35 @@ displayNotes = () => {
             noteElement.className = "notesBox";
             noteElement.innerHTML = `
                 <input type="checkbox"
-                class="cursor-pointer"
+                class="cursor-pointer " 
                 ${todos[i].completed ? 'checked' : ''}
                 onChange=toggleCompleted(${todos[i].id}) >
                 <div class="crossSymbol" onclick="deleteToDo(${todos[i].id})">&#x2716;</div>
-                <p class="displayTitle">${todos[i].title}</p>
-                <p class="displayDesc">${todos[i].desc}</p>
+                <p class="displayTitle ${todos[i].completed ? 'comp-ttl' : ''}" >${todos[i].title}</p>
+                <p class="displayDesc ${todos[i].completed ? 'comp-desc' : ''}">${todos[i].desc}</p>
             `;
             notesContainer.prepend(noteElement);
         }
     }
 };
     toggleCompleted = (id) => {
+
         var existingTodos = JSON.parse(localStorage.getItem("todos"));
         // Find the ToDo item with the specified ID
      
         const updatedTodos = existingTodos.map(todo => {
             if (todo.id === id) {
                 todo.completed = !todo.completed;
-            
-            
             }
             return todo;
         });
         // Update the modified ToDo items in the local storage
         localStorage.setItem("todos", JSON.stringify(updatedTodos));
-        location.reload();
+        location.reload(); //iski hi wajah se line through ho pa raha hai nhi to yaha par koi aur function likhna padta style change krne ke liye toggle krne par
     };
     
 displayNotes()
-deleteToDo=(id)=>{
+deleteToDo=(id)=>{  
     //first of all we need to get all the local storage to matc id
     var existingTodos = JSON.parse(localStorage.getItem("todos")); //"existingTodos" is array of objects
     existingTodos= existingTodos.filter((arr)=>arr.id !== id ) //"existingTodos" is update , now it dont have notes of that id

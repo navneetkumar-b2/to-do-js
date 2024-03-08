@@ -61,7 +61,7 @@ displayNotes = () => {
                 <p class="displayTitle">${todos[i].title}</p>
                 <p class="displayDesc">${todos[i].desc}</p>
             `;
-            notesContainer.appendChild(noteElement);
+            notesContainer.prepend(noteElement);
         }
     }
 };
@@ -69,7 +69,13 @@ displayNotes = () => {
 
 displayNotes()
 deleteToDo=(id)=>{
-    alert(id)
+    //first of all we need to get all the local storage to matc id
+    var existingTodos = JSON.parse(localStorage.getItem("todos")); //"existingTodos" is array of objects
+    existingTodos= existingTodos.filter((arr)=>arr.id !== id ) //"existingTodos" is update , now it dont have notes of that id
+    localStorage.setItem("todos", JSON.stringify(existingTodos));
+ // Reload the page
+ location.reload();
+
 }
 deleteAllNotes=()=>{
     // alert("all notes will be deleted")
